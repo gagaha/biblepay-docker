@@ -5,7 +5,7 @@ Based on Ubuntu 16.04, this container will run biblepayd. Contains also the bibl
 
 ## Dockerfile
 
--	[`linux` (*biblepay-docker/Dockerfile*)](https://github.com/gagaha/biblepay-docker/Dockerfile)
+-	[`linux` (*biblepay-docker/Dockerfile*)](https://github.com/gagaha/biblepay-docker/blob/master/Dockerfile)
 
 
 # Usage:
@@ -13,16 +13,16 @@ Based on Ubuntu 16.04, this container will run biblepayd. Contains also the bibl
 ## Run container
 ```console
 $ docker run -d --name biblepay \
--v $(pwd)/biblepay-data:/root/.biblepaycore gagaha/biblepay
+$ -v $(pwd)/biblepay-data:/root/.biblepaycore gagaha/biblepay
 ```
 
 ## Run with environment variables
 ```console
-docker run -d --name biblepay \
--v $(pwd)/biblepay-data:/root/.biblepaycore \
--e "REINDEX=1" -e "GEN=1" -e "POOLPORT=80" \
--e "POOL=http://pool.biblepay.org" -e "WORKERID=gaga-worker2" \
--e "GENPROCLIMIT=2" gagaha/biblepay
+$ docker run -d --name biblepay \
+$ -v $(pwd)/biblepay-data:/root/.biblepaycore \
+$ -e "REINDEX=1" -e "GEN=1" -e "POOLPORT=80" \
+$ -e "POOL=http://pool.biblepay.org" -e "WORKERID=gaga-worker2" \
+$ -e "GENPROCLIMIT=2" gagaha/biblepay
 ```
 
 ## biblepay-cli example:
