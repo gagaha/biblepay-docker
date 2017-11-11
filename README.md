@@ -8,15 +8,15 @@ Based on Ubuntu 16.04, this container will run biblepayd. Contains also the bibl
 -	[`linux` (*biblepay-docker/Dockerfile*)](https://github.com/gagaha/biblepay-docker/Dockerfile)
 
 
-#Usage:
+# Usage:
 
-##Run container
+## Run container
 ```console
 $ docker run -d --name biblepay \
 -v $(pwd)/biblepay-data:/root/.biblepaycore gagaha/biblepay
 ```
 
-##Run with environment variables
+## Run with environment variables
 ```console
 docker run -d --name biblepay \
 -v $(pwd)/biblepay-data:/root/.biblepaycore \
@@ -25,7 +25,7 @@ docker run -d --name biblepay \
 -e "GENPROCLIMIT=2" gagaha/biblepay
 ```
 
-##biblepay-cli example:
+## biblepay-cli example:
 
 ```console
 $ docker exec biblepay biblepay-cli getmininginfo
