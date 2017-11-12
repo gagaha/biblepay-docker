@@ -2,7 +2,7 @@
  
  Docker Container for Biblepay
 
-Based on Ubuntu 16.04, this container will run biblepayd. Contains also the biblepay-cli and all necessary dependencies and libraries. For configuration, either link the volume to a local path and edit biblepay.conf or pass environment variables and they will be replaced/added in the biblepay.conf.
+Based on Ubuntu 16.04, this container will run biblepayd. Contains also the biblepay-cli and all necessary dependencies and libraries. For configuration, either link the volume to a local path and edit biblepay.conf or pass environment variables.
 
 ## Links
 
