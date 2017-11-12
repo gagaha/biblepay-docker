@@ -6,7 +6,8 @@ Based on Ubuntu 16.04, this container will run biblepayd. Contains also the bibl
 
 ## Links
 
--	[`GitHub` (*gagaha/biblepay-docker*)](https://github.com/gagaha/biblepay-docker)
+-	[`GitHub Biblepay` (*biblepay/biblepay*)](https://github.com/biblepay/biblepay)
+-	[`GitHub Biblepay Docker (unofficial) ` (*gagaha/biblepay-docker*)](https://github.com/gagaha/biblepay-docker)
 -	[`Docker Hub` (*gagaha/biblepay*)](https://hub.docker.com/r/gagaha/biblepay/)
 
 
