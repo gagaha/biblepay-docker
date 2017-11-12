@@ -1,7 +1,8 @@
 # biblepay-docker
  Docker Container for Biblepay
 
-Based on Ubuntu 16.04, this container will run biblepayd. Contains also the biblepay-cli and all necessary dependencies and libraries. I recommend linking a volume in order to modify the biblepay.conf and to store your wallet.
+Based on Ubuntu 16.04, this container will run biblepayd. Contains also the biblepay-cli and all necessary dependencies and libraries. For configuration, either link the volume to a local path and edit biblepay.conf or pass environment variables and they will be replaced/added in the biblepay.conf.
+
 
 ## Links
 
@@ -25,6 +26,16 @@ docker run -d --name biblepay \
 -e "POOL=http://pool.biblepay.org" -e "WORKERID=gaga-worker2" \
 -e "GENPROCLIMIT=2" gagaha/biblepay
 ```
+
+## Supported environment variables:
+- REINDEX: reindex blocks (1/0 for true/false)
+- GEN: generate - start mining (1/0 for true/false)
+- POOLPORT: port number of the pool
+- POOL: url of the pool
+- WORKERID: worker id/name on the pool
+- GENPROCLIMIT: number of concurrent mining processes 
+- ADDNODE: node address (set by default: 'node.biblepay.org', 'biblepay.inspect.network')
+
 
 ## biblepay-cli example:
 
