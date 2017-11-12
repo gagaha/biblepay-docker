@@ -29,6 +29,7 @@ RUN apt-get update && apt-get install -y software-properties-common && \
 VOLUME /root/.biblepaycore
 
 COPY ./docker-entrypoint.sh /
+
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
 CMD ["biblepayd", "-printtoconsole"]
