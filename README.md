@@ -3,9 +3,10 @@
 
 Based on Ubuntu 16.04, this container will run biblepayd. Contains also the biblepay-cli and all necessary dependencies and libraries. I recommend linking a volume in order to modify the biblepay.conf and to store your wallet.
 
-## Dockerfile
+## Links
 
--	[`linux` (*biblepay-docker/Dockerfile*)](https://github.com/gagaha/biblepay-docker/blob/master/Dockerfile)
+-	[`GitHub` (*gagaha/biblepay-docker*)](https://github.com/gagaha/biblepay-docker)
+-	[`Docker Hub` (*gagaha/biblepay*)](https://hub.docker.com/r/gagaha/biblepay/)
 
 
 # Usage:
