@@ -1,8 +1,8 @@
 #!/bin/bash
 
 confPath="/root/.biblepaycore/biblepay.conf"
-envs=( "$REINDEX" "$GENPROCLIMIT" "$GEN" "$POOL" "$POOLPORT" "$WORKERID" )
-vars=( "reindex" "genproclimit" "gen" "pool" "poolport" "workerid" )
+envs=( "$REINDEX" "$GEN" "$GENPROCLIMIT" "$POOL" "$POOLPORT" "$WORKERID" )
+vars=( "reindex" "gen" "genproclimit" "pool" "poolport" "workerid" )
 
 if [ ! -f $confPath ]; then
 	echo -e "\nCreate config file:\n"
