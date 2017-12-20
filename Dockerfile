@@ -2,7 +2,7 @@ FROM ubuntu:16.04
 
 LABEL maintainer="gagaha@gmx.net"
 
-LABEL version=1.0.7.0
+LABEL version=1.0.7.1
 
 ENV DEBIAN_FRONTEND noninteractive
 
