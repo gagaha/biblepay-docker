@@ -2,8 +2,6 @@ FROM ubuntu:16.04
 
 LABEL maintainer="gagaha@gmx.net"
 
-LABEL version=1.0.9.5
-
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && apt-get install -y software-properties-common && \
@@ -11,13 +9,16 @@ RUN apt-get update && apt-get install -y software-properties-common && \
         apt-get update && apt-get install -y --no-install-recommends libdb4.8-dev libdb4.8++-dev \
         automake bsdmainutils wget gcc-6 g++-6 git make build-essential libzmq3-dev autoconf libtool \
         libqt4-dev libminiupnpc-dev pkg-config libboost-all-dev libssl-dev libevent-dev libprotobuf-dev protobuf-compiler htop && \
-        cd /root && git clone https://github.com/biblepay/biblepay && BP_ROOT=/root && \
-        BDB_PREFIX="${BP_ROOT}/db4" && mkdir -p $BDB_PREFIX && \
+        BP_ROOT=/root && BDB_PREFIX="${BP_ROOT}/db4" && mkdir -p $BDB_PREFIX && \
         wget 'http://download.oracle.com/berkeley-db/db-4.8.30.NC.tar.gz' && \
         echo '12edc0df75bf9abd7f82f821795bcee50f42cb2e5f76a6a281b85732798364ef db-4.8.30.NC.tar.gz' | sha256sum -c && \
         tar -xzvf db-4.8.30.NC.tar.gz && rm db-4.8.30.NC.tar.gz && cd db-4.8.30.NC/build_unix && \
         ../dist/configure --enable-cxx --disable-shared --with-pic --prefix=$BDB_PREFIX && \
-        make install && \
+        make install
+        
+LABEL version=1.0.9.5b
+        
+RUN BP_ROOT=/root && BDB_PREFIX="${BP_ROOT}/db4" && cd /root && git clone https://github.com/biblepay/biblepay && \
         chmod 777 $BP_ROOT/biblepay/share/genbuild.sh $BP_ROOT/biblepay/autogen.sh && \
         $BP_ROOT/biblepay/autogen.sh && \
         $BP_ROOT/biblepay/configure --without-gui --disable-bench --disable-tests --with-miniupnpc LDFLAGS="-L${BDB_PREFIX}/lib/" CPPFLAGS="-I${BDB_PREFIX}/include/" && \
