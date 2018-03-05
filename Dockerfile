@@ -16,13 +16,13 @@ RUN apt-get update && apt-get install -y software-properties-common && \
         ../dist/configure --enable-cxx --disable-shared --with-pic --prefix=$BDB_PREFIX && \
         make install
         
-LABEL version=1.0.9.5b
+LABEL version=1.1.0.1
         
 RUN BP_ROOT=/root && BDB_PREFIX="${BP_ROOT}/db4" && cd /root && git clone https://github.com/biblepay/biblepay && \
         chmod 777 $BP_ROOT/biblepay/share/genbuild.sh $BP_ROOT/biblepay/autogen.sh && \
         $BP_ROOT/biblepay/autogen.sh && \
         $BP_ROOT/biblepay/configure --without-gui --disable-bench --disable-tests --with-miniupnpc LDFLAGS="-L${BDB_PREFIX}/lib/" CPPFLAGS="-I${BDB_PREFIX}/include/" && \
-        make -j4 && \
+        make -j8 && \
         mv ${BP_ROOT}/db-4.8.30.NC/build_unix/src/biblepayd ${BP_ROOT}/db-4.8.30.NC/build_unix/src/biblepay-cli ${BP_ROOT}/db-4.8.30.NC/build_unix/src/biblepay-tx /usr/sbin && \
         rm -rf  $BP_ROOT/biblepay/ $BP_ROOT/db4/ ${BP_ROOT}/db-4.8.30.NC && \
         apt-get autoremove -y && apt-get remove --purge -y gcc-6 g++-6 git make build-essential autoconf libzmq3-dev libtool libdb4.8-dev libdb4.8++-dev libqt4-dev \
