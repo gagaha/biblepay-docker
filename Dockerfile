@@ -22,9 +22,9 @@ RUN BP_ROOT=/root && BDB_PREFIX="${BP_ROOT}/db4" && cd /root && git clone https:
         chmod 777 $BP_ROOT/biblepay/share/genbuild.sh $BP_ROOT/biblepay/autogen.sh && \
         $BP_ROOT/biblepay/autogen.sh && \
         $BP_ROOT/biblepay/configure --without-gui --disable-bench --disable-tests --with-miniupnpc LDFLAGS="-L${BDB_PREFIX}/lib/" CPPFLAGS="-I${BDB_PREFIX}/include/" && \
-        make -j8 && \
-        mv ${BP_ROOT}/db-4.8.30.NC/build_unix/src/biblepayd ${BP_ROOT}/db-4.8.30.NC/build_unix/src/biblepay-cli ${BP_ROOT}/db-4.8.30.NC/build_unix/src/biblepay-tx /usr/sbin && \
-        rm -rf  $BP_ROOT/biblepay/ $BP_ROOT/db4/ ${BP_ROOT}/db-4.8.30.NC && \
+        make && \
+        mv ${BP_ROOT}/src/biblepayd ${BP_ROOT}/src/biblepay-cli ${BP_ROOT}/src/biblepay-tx /usr/sbin && \
+        rm -rf $BP_ROOT/src $BP_ROOT/biblepay/ $BP_ROOT/db4/ ${BP_ROOT}/db-4.8.30.NC && \
         apt-get autoremove -y && apt-get remove --purge -y gcc-6 g++-6 git make build-essential autoconf libzmq3-dev libtool libdb4.8-dev libdb4.8++-dev libqt4-dev \
         libssl-dev libevent-dev libprotobuf-dev protobuf-compiler automake bsdmainutils libboost-all-dev libssl-dev libminiupnpc-dev pkg-config  && \
         apt-get clean && rm -rf /var/lib/{apt,dpkg,cache,log}/
