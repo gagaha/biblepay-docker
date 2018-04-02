@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y software-properties-common && \
         ../dist/configure --enable-cxx --disable-shared --with-pic --prefix=$BDB_PREFIX && \
         make install
         
-LABEL version=1.1.1.7
+LABEL version=1.1.1.8
         
 RUN BP_ROOT=/root && BDB_PREFIX="${BP_ROOT}/db4" && cd /root && git clone https://github.com/biblepay/biblepay && \
         chmod 777 $BP_ROOT/biblepay/share/genbuild.sh $BP_ROOT/biblepay/autogen.sh && \
