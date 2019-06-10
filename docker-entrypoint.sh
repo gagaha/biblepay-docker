@@ -32,9 +32,6 @@ function addNode {
 	fi
 }
 
-addNode "node.biblepay.org"
-addNode "biblepay.inspect.network"
-addNode "node.biblepay-explorer.org"
 
 if [ -n "$ADDNODE" ]
 	then
