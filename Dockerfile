@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y build-essential libtool autotools-dev a
 	git curl build-essential libtool autotools-dev automake pkg-config python3 bsdmainutils cmake && \
 	apt-get install -y software-properties-common &&  add-apt-repository ppa:bitcoin/bitcoin && apt-get update && apt-get install -y libdb4.8-dev libdb4.8++-dev
 
-LABEL version=1.4.3.5
+LABEL version=1.4.3.6
 
 RUN git clone http://github.com/biblepay/biblepay-evolution && \
 	prefix=x86_64-pc-linux-gnu && cd biblepay-evolution/depends && make && cd .. && ./autogen.sh && ./configure --without-gui --disable-bench --disable-tests --prefix `pwd`/depends/x86_64-pc-linux-gnu && make && \
