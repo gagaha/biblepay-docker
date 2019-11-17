@@ -22,7 +22,7 @@ docker run -d --name biblepay \
 ## Run with environment variables
 ```
 docker run -d --name biblepay \
--v $(pwd)/biblepay-data:/root/.biblepaycore \
+-v $(pwd)/biblepay-data:/root/.biblepayevolution \
 -e "REINDEX=1" -e "GEN=1" -e "POOLPORT=80" \
 -e "POOL=http://pool.biblepay.org" -e "WORKERID=gaga-worker2" \
 -e "GENPROCLIMIT=2" gagaha/biblepay
