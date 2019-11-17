@@ -14,7 +14,7 @@ Based on Ubuntu 18.04, this container will run biblepayd. Contains also the bibl
 ## Run container
 ```
 docker run -d --name biblepay \
--v $(pwd)/biblepay-data:/root/.biblepaycore gagaha/biblepay
+-v $(pwd)/biblepay-data:/root/.biblepayevolution gagaha/biblepay
 ```  
   
 (creates the directory 'biblepay-data' if non existing)
