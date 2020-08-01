@@ -2,7 +2,7 @@
  
 A Docker Container for Biblepay
 
-Based on Ubuntu 18.04, this container will run biblepayd. Contains also the biblepay-cli and all necessary dependencies and libraries. For configuration, either link the volume to a local path and edit biblepay.conf or pass environment variables.
+Based on Ubuntu, this container will run biblepayd. Contains also the biblepay-cli and all necessary dependencies and libraries. For configuration, either link the volume to a local path and edit biblepay.conf or pass environment variables.
 
 ## Links
 
@@ -14,7 +14,7 @@ Based on Ubuntu 18.04, this container will run biblepayd. Contains also the bibl
 ## Run container
 ```
 docker run -d --name biblepay \
--v $(pwd)/biblepay-data:/root/.biblepayevolution gagaha/biblepay
+-v $(pwd)/biblepay-data:/root/.biblepay gagaha/biblepay
 ```  
   
 (creates the directory 'biblepay-data' if non existing)
@@ -22,10 +22,8 @@ docker run -d --name biblepay \
 ## Run with environment variables
 ```
 docker run -d --name biblepay \
--v $(pwd)/biblepay-data:/root/.biblepayevolution \
--e "REINDEX=1" -e "GEN=1" -e "POOLPORT=80" \
--e "POOL=http://pool.biblepay.org" -e "WORKERID=gaga-worker2" \
--e "GENPROCLIMIT=2" gagaha/biblepay
+-v $(pwd)/biblepay-data:/root/.biblepay \
+-e "REINDEX=1" -e "GEN=1" -e "GENPROCLIMIT=2" gagaha/biblepay
 ```   
 (adds or replaces the values in biblepay.conf)
   
