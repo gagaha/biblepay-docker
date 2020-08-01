@@ -1,6 +1,6 @@
 #!/bin/bash
 
-confPath="/root/.biblepayevolution/biblepay.conf"
+confPath="/root/.biblepay/biblepay.conf"
 envs=( "$REINDEX" "$GEN" "$GENPROCLIMIT" "$POOL" "$POOLPORT" "$WORKERID" )
 vars=( "reindex" "gen" "genproclimit" "pool" "poolport" "workerid" )
 
